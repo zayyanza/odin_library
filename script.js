@@ -19,7 +19,8 @@ addBookToLibrary("James", "The Hobbit", 300);
 
 function displayLibrary() {
     content.innerHTML = "";
-    for(book of myLibrary) {
+
+    myLibrary.forEach((book, index) => {
         const card = document.createElement("div");
         card.classList.add("card")
 
@@ -27,16 +28,27 @@ function displayLibrary() {
         <div> Author: ${book.author}</div>
         <div> title: ${book.title}</div>
         <div> Pages: ${book.pages}</div>
+        <button class="removeBookBtn" data-index="${index}">Remove</button
         `;
 
         content.appendChild(card);
-    }
+    });
+
+    document.querySelectorAll(".removeBookBtn").forEach(button => {
+        button.addEventListener("click", (event) => {
+            const index = event.target.getAttribute("data-index");
+            myLibrary.splice(index, 1)
+            displayLibrary();
+        });
+    });
+
 }
 
 const addBookBtn = document.querySelector(".addBookBtn");
 const dialogModal = document.querySelector(".dialogModal");
 const closeModalBtn = document.querySelector(".closeModalBtn");
 const addBookForm = document.querySelector(".addBookForm");
+
 
 addBookBtn.addEventListener("click", () => {
     dialogModal.showModal();
@@ -61,6 +73,4 @@ addBookForm.addEventListener("submit", (event) => {
     
 });
 
-
 displayLibrary();
-console.log(myLibrary)

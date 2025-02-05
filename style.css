@@ -1,8 +1,11 @@
 .card {
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
     width: 300px;
     background-color: aliceblue;
     padding: 1rem;
+    gap: 1rem;
 }
 
 .content {
@@ -22,6 +25,14 @@
     width: 60px;
     bottom: 2rem ;
     right: 2rem;
+}
+
+.removeBookBtn {
+    background-color: red;
+    color: white;
+    border: none;
+    height: 30px;
+    width: 120px;
 }
 
 svg {
