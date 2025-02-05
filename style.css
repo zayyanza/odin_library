@@ -1,0 +1,29 @@
+.card {
+    height: 300px;
+    width: 300px;
+    background-color: aliceblue;
+    padding: 1rem;
+}
+
+.content {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.addBookBtn {
+    position: fixed;
+    background-color: blue;
+    border-radius: 100%;
+    outline: none;
+    border: none;
+    height: 60px;
+    width: 60px;
+    bottom: 2rem ;
+    right: 2rem;
+}
+
+svg {
+    fill: white;
+}
