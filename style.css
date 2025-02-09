@@ -6,6 +6,7 @@
     background-color: aliceblue;
     padding: 1rem;
     gap: 1rem;
+    margin: 1rem 0;
 }
 
 .content {
@@ -41,6 +42,10 @@
     border: none;
     height: 30px;
     width: 120px;
+}
+
+h1 {
+    padding: 0 2rem;
 }
 
 
