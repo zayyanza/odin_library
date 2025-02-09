@@ -13,9 +13,6 @@ function addBookToLibrary(author, title, pages) {
 }
 
 addBookToLibrary("J.K Rowling", "Harry Potter", 295);
-addBookToLibrary("James", "The Hobbit", 300);
-addBookToLibrary("James", "The Hobbit", 300);
-addBookToLibrary("James", "The Hobbit", 300);
 
 function displayLibrary() {
     content.innerHTML = "";
@@ -28,7 +25,8 @@ function displayLibrary() {
         <div> Author: ${book.author}</div>
         <div> title: ${book.title}</div>
         <div> Pages: ${book.pages}</div>
-        <button class="removeBookBtn" data-index="${index}">Remove</button
+        <button class="readBookBtn" data-index="${index}">Not Read</button>
+        <button class="removeBookBtn" data-index="${index}">Remove</button>
         `;
 
         content.appendChild(card);
@@ -39,6 +37,20 @@ function displayLibrary() {
             const index = event.target.getAttribute("data-index");
             myLibrary.splice(index, 1)
             displayLibrary();
+        });
+    });
+
+    document.querySelectorAll(".readBookBtn").forEach(button => {
+        button.addEventListener("click", (event) => {
+            let btn = event.target;
+
+            if (btn.style.backgroundColor === "red") {
+                btn.style.backgroundColor = "green";
+                btn.textContent = "Read";
+            } else {
+                btn.style.backgroundColor = "red";
+                btn.textContent = "Not Read";
+            }
         });
     });
 
